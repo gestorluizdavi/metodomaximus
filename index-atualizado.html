@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0B0B0C" />
+<title>Método Maximus Presencial — Invictus Centro de Performance</title>
+<meta name="description" content="Método Maximus Presencial na Invictus: treino, dieta, acompanhamento e tecnologia trabalhando juntos. Garanta sua vaga." />
+
+<!-- ===== META PIXEL (opcional): troque SEU_PIXEL_ID e descomente =====
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','SEU_PIXEL_ID'); fbq('track','PageView');
+</script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C; --ink-2:#131315; --ink-3:#1B1B1E;
+  --bone:#EFE9DC; --paper:#F6F1E7;
+  --gold:#B8863B; --gold-2:#D8AE5C; --gold-3:#EBCF8A;
+  --rust:#9C4A2E; --muted:#9A938A; --soft:rgba(255,255,255,0.74);
+  --line:rgba(255,255,255,0.10); --line-dark:rgba(11,11,12,0.14);
+  --display:'Teko','Oswald',sans-serif;
+  --sans:'Ubuntu',-apple-system,BlinkMacSystemFont,sans-serif;
+  --pad:clamp(18px,5vw,40px); --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink);-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:#fff;background:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-rendering:optimizeLegibility;font-weight:400}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:0.01em;line-height:0.96;text-transform:uppercase}
+b,strong{font-weight:500}
+.gold{color:var(--gold-3)}
+.soft-i{font-family:var(--sans);font-style:italic;font-weight:300}
+
+.kicker{display:inline-flex;align-items:center;gap:12px;font-family:var(--sans);font-weight:500;font-size:clamp(11px,2.5vw,13px);letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-2)}
+.kicker .idx{font-family:var(--display);font-weight:500;color:var(--gold);font-size:1.7em;letter-spacing:0.02em}
+.kicker .bar{width:34px;height:1px;background:var(--gold);opacity:0.6}
+
+.ticker{background:var(--ink);border-bottom:1px solid var(--line);font-family:var(--sans);text-transform:uppercase;letter-spacing:0.18em;font-size:11px;color:var(--muted);text-align:center;padding:9px 16px;font-weight:400}
+.ticker b{color:var(--gold-2);font-weight:500}
+
+.nav{position:sticky;top:0;z-index:120;background:rgba(11,11,12,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;width:auto}
+.nav-cta{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);background:var(--gold-2);padding:11px 20px;border-radius:2px;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold-3);transform:translateY(-1px)}
+@media(max-width:520px){.brand img{height:36px}.nav-cta{padding:10px 14px;font-size:11px}}
+
+.hero{position:relative;overflow:hidden;padding:clamp(64px,11vw,120px) 0 clamp(64px,11vw,120px);background:var(--ink);isolation:isolate}
+/* Fachada noturna: camada de fundo. Troque o src/url pela foto de fachada que preferir. */
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('https://invictusmafra.com.br/wp-content/uploads/2025/09/Fachada-Noturna-Invictus.png') center/cover no-repeat}
+/* Fachada diurna (aérea): camada que faz o crossfade por cima */
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:url('https://invictusmafra.com.br/wp-content/uploads/2025/09/FACHADA.jpg') center/cover no-repeat;animation:heroCross 16s ease-in-out infinite}
+.hero::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg, rgba(9,9,10,0.94) 0%, rgba(9,9,10,0.82) 46%, rgba(9,9,10,0.55) 100%), linear-gradient(0deg, rgba(9,9,10,0.85), transparent 55%)}
+@keyframes heroCross{0%,40%{opacity:1}50%,90%{opacity:0}100%{opacity:1}}
+.hero-in{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+@media(max-width:860px){.hero-in{grid-template-columns:1fr;gap:26px}}
+.hero-lead{max-width:760px}
+.hero .kicker{margin-bottom:clamp(18px,4vw,26px)}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(48px,11vw,116px);line-height:0.92;letter-spacing:0.01em;color:#fff;text-transform:uppercase}
+.hero h1 .l2{color:var(--gold-3)}
+.hero h1 .soft-i{display:block;font-family:var(--sans);font-style:normal;font-weight:300;font-size:clamp(17px,3.4vw,26px);color:var(--soft);letter-spacing:0;line-height:1.5;margin-top:clamp(16px,2.6vw,22px);text-transform:none}
+.hero p.sub{font-size:clamp(15px,3.3vw,18px);color:var(--soft);max-width:540px;margin:clamp(20px,4vw,28px) 0 clamp(26px,4vw,34px);line-height:1.75;font-weight:400}
+.hero p.sub b{color:#fff;font-weight:500}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-side{display:flex;flex-direction:column;gap:20px;padding-bottom:6px}
+@media(max-width:860px){.hero-side{flex-direction:row;flex-wrap:wrap}}
+.hero-stat{border-left:1px solid var(--gold);padding-left:14px}
+.hero-stat .n{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,52px);color:#fff;line-height:0.9}
+.hero-stat .t{font-family:var(--sans);text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:rgba(255,255,255,0.66);margin-top:5px;max-width:160px;font-weight:400}
+
+.btn{display:inline-flex;align-items:center;gap:11px;cursor:pointer;border:none;font-family:var(--sans);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;font-size:clamp(12px,2.8vw,14px);padding:16px 28px;border-radius:2px;transition:transform .15s,background .2s,color .2s;line-height:1}
+.btn .arw{width:16px;height:16px;transition:transform .2s}
+.btn:hover .arw{transform:translateX(4px)}
+.btn-solid{background:var(--gold-2);color:var(--ink)}
+.btn-solid:hover{background:var(--gold-3);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3)}
+.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-3)}
+
+.manifesto{background:var(--paper);color:var(--ink);padding:clamp(56px,9vw,96px) 0;position:relative}
+.manifesto .kicker{color:var(--gold)}
+.manifesto .kicker .bar{background:var(--gold)}
+.manifesto-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,70px);align-items:center;margin-top:30px}
+@media(max-width:800px){.manifesto-grid{grid-template-columns:1fr;gap:26px}}
+.manifesto blockquote{font-family:var(--display);font-weight:500;line-height:0.98;font-size:clamp(38px,7vw,68px);color:var(--ink);letter-spacing:0.01em;text-transform:uppercase}
+.manifesto blockquote .hi{color:var(--gold)}
+.manifesto blockquote .em{color:var(--rust)}
+.manifesto .body p{font-size:clamp(15px,3.3vw,17px);color:#3a352d;line-height:1.85;margin-bottom:16px;font-weight:400}
+.manifesto .body p b{color:var(--ink);font-weight:500}
+.manifesto .sig{font-family:var(--sans);text-transform:uppercase;letter-spacing:0.16em;font-size:12px;color:var(--gold);margin-top:22px;font-weight:500;border-top:1px solid var(--line-dark);padding-top:18px}
+
+.problem{background:var(--ink);padding:clamp(60px,9vw,100px) 0}
+.problem h2{font-family:var(--display);font-weight:500;font-size:clamp(38px,7vw,64px);line-height:0.96;margin:20px 0 38px;max-width:20ch;text-transform:uppercase}
+.problem h2 .gold{color:var(--gold-3)}
+.prob-rows{border-top:1px solid var(--line)}
+.prob-row{display:grid;grid-template-columns:56px 1fr;gap:clamp(16px,4vw,34px);align-items:baseline;padding:clamp(22px,4vw,30px) 0;border-bottom:1px solid var(--line)}
+.prob-row .no{font-family:var(--display);font-weight:400;color:var(--gold);font-size:clamp(30px,5vw,42px);line-height:1}
+.prob-row .tx h3{font-family:var(--display);font-weight:500;font-size:clamp(22px,4.2vw,30px);color:#fff;margin-bottom:6px;letter-spacing:0.01em;text-transform:uppercase}
+.prob-row .tx p{color:var(--soft);font-size:clamp(14px,3.2vw,16px);max-width:62ch;line-height:1.7;font-weight:400}
+.prob-note{margin-top:32px;font-family:var(--sans);font-style:italic;font-weight:300;font-size:clamp(18px,4vw,26px);color:#fff;line-height:1.5;max-width:36ch}
+.prob-note b{color:var(--gold-3);font-weight:400;font-style:normal}
+
+.method{background:var(--ink-2);padding:clamp(60px,9vw,100px) 0;border-top:1px solid var(--line)}
+.method-head{max-width:680px;margin-bottom:clamp(38px,6vw,52px)}
+.method-head h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,7.4vw,72px);line-height:0.94;margin:18px 0 16px;text-transform:uppercase}
+.method-head h2 .gold{color:var(--gold-3)}
+.method-head p{color:var(--soft);font-size:clamp(15px,3.3vw,17px);line-height:1.75;font-weight:400}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:820px){.mgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.mgrid{grid-template-columns:1fr}}
+.mcell{background:var(--ink-2);padding:clamp(26px,4vw,34px);transition:background .25s;position:relative}
+.mcell:hover{background:var(--ink-3)}
+.mcell .ic{width:42px;height:42px;color:var(--gold-2);margin-bottom:18px}
+.mcell .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4}
+.mcell .no{position:absolute;top:22px;right:26px;font-family:var(--display);font-weight:400;color:rgba(184,134,59,0.45);font-size:26px}
+.mcell h3{font-family:var(--display);font-weight:500;font-size:clamp(21px,4vw,26px);color:#fff;margin-bottom:8px;letter-spacing:0.01em;text-transform:uppercase}
+.mcell p{color:var(--soft);font-size:clamp(13.5px,3.1vw,15px);line-height:1.65;font-weight:400}
+
+.outcome{background:var(--ink);padding:clamp(60px,9vw,100px) 0;border-top:1px solid var(--line)}
+.outcome-in{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(34px,6vw,64px);align-items:center}
+@media(max-width:860px){.outcome-in{grid-template-columns:1fr;gap:32px}}
+.outcome h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,7.4vw,68px);line-height:0.94;margin:18px 0 18px;text-transform:uppercase}
+.outcome h2 .gold{color:var(--gold-3)}
+.outcome .lead{color:var(--soft);font-size:clamp(15px,3.3vw,17px);line-height:1.75;font-weight:400}
+.olist{list-style:none;display:flex;flex-direction:column;gap:2px}
+.olist li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}
+.olist li:first-child{border-top:1px solid var(--line)}
+.olist .tick{width:24px;height:24px;flex-shrink:0;color:var(--gold-2);margin-top:3px}
+.olist .tick svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6}
+.olist .tt{font-family:var(--display);font-weight:500;font-size:clamp(20px,4vw,25px);color:#fff;line-height:1;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.01em}
+.olist .td{color:var(--muted);font-size:clamp(13px,3vw,14.5px);line-height:1.6;font-weight:400}
+
+/* ===== Faixa drone full-width (foto de drone real da Invictus) ===== */
+.droneband{position:relative;min-height:clamp(320px,52vw,560px);display:flex;align-items:flex-end;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);isolation:isolate}
+.droneband::before{content:"";position:absolute;inset:0;z-index:0;background:url('https://invictusmafra.com.br/wp-content/uploads/2025/09/DJI_0047-frame-at-0m0s-scaled.jpg') center/cover no-repeat;transform:scale(1.02)}
+.droneband::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg, rgba(9,9,10,0.90) 0%, rgba(9,9,10,0.25) 50%, rgba(9,9,10,0.55) 100%)}
+.droneband .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(40px,7vw,64px);padding-bottom:clamp(30px,5vw,46px)}
+.droneband .kicker{color:var(--gold-2);margin-bottom:12px}
+.droneband h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,8vw,80px);line-height:0.94;text-transform:uppercase;max-width:18ch}
+.droneband h2 .gold{color:var(--gold-3)}
+
+/* ===== Beneficios: linhas alternadas texto + imagem ===== */
+.benefits{background:var(--ink);padding:clamp(60px,9vw,100px) 0;border-top:1px solid var(--line)}
+.benefits-head{max-width:640px;margin-bottom:clamp(30px,5vw,42px)}
+.benefits-head h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,7.4vw,72px);line-height:0.94;margin:16px 0 12px;text-transform:uppercase}
+.benefits-head h2 .gold{color:var(--gold-3)}
+.benefits-head p{color:var(--soft);font-size:clamp(15px,3.3vw,17px);line-height:1.7;font-weight:400}
+.brow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,58px);align-items:center;padding:clamp(28px,5vw,46px) 0;border-top:1px solid var(--line)}
+.brow:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:800px){.brow{grid-template-columns:1fr;gap:22px}}
+.bimg{position:relative;overflow:hidden;border-radius:4px;border:1px solid var(--line);aspect-ratio:4/5;background:var(--ink-2);max-width:420px}
+.brow:not(.rev) .bimg{margin-right:auto}
+.brow.rev .bimg{margin-left:auto}
+@media(max-width:800px){.bimg{margin:0 auto}}
+.bimg img{width:100%;height:100%;object-fit:cover;object-position:center 12%;transition:transform .6s ease}
+.brow:hover .bimg img{transform:scale(1.05)}
+.bimg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(9,9,10,0.55), transparent 55%);pointer-events:none}
+.bimg .tag{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--sans);text-transform:uppercase;letter-spacing:0.12em;font-size:11px;font-weight:500;color:#fff}
+.bimg .tag::before{content:"";display:inline-block;width:14px;height:1px;background:var(--gold-2);margin-right:8px;vertical-align:middle}
+.btext .bnum{font-family:var(--display);font-weight:400;color:var(--gold);font-size:clamp(30px,5vw,46px);line-height:1;margin-bottom:6px}
+.btext h3{font-family:var(--display);font-weight:500;font-size:clamp(26px,5.2vw,42px);color:#fff;text-transform:uppercase;line-height:0.98;margin-bottom:12px;letter-spacing:0.01em}
+.btext h3 .gold{color:var(--gold-3)}
+.btext p{color:var(--soft);font-size:clamp(14.5px,3.2vw,17px);line-height:1.7;max-width:44ch;font-weight:400}
+.brow.rev .bimg{order:2}
+@media(max-width:800px){.brow .bimg{order:-1}}
+
+.plans{background:var(--bone);color:var(--ink);padding:clamp(60px,9vw,100px) 0}
+.plans .kicker{color:var(--gold)}
+.plans .kicker .bar{background:var(--gold)}
+.plans-head{max-width:720px;margin-bottom:clamp(34px,5vw,44px)}
+.plans-head h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,7.4vw,72px);line-height:0.94;margin:18px 0 14px;color:var(--ink);text-transform:uppercase}
+.plans-head h2 .gold{color:var(--gold)}
+.plans-head p{color:#48423a;font-size:clamp(15px,3.3vw,17px);line-height:1.7;font-weight:400}
+.pres{background:var(--ink);color:#fff;border:1px solid rgba(184,134,59,0.4);border-radius:5px;overflow:hidden;display:grid;grid-template-columns:1.05fr 1fr;box-shadow:0 30px 70px rgba(11,11,12,0.2)}
+@media(max-width:820px){.pres{grid-template-columns:1fr}}
+.pres-l{padding:clamp(30px,5vw,48px);position:relative;background:linear-gradient(160deg,#1c1810,#0b0b0c)}
+.pres-l .flag{display:inline-block;background:var(--gold);color:var(--ink);font-family:var(--sans);font-weight:500;text-transform:uppercase;letter-spacing:0.14em;font-size:11px;padding:6px 14px;border-radius:2px;margin-bottom:22px}
+.pres-l h3{font-family:var(--display);font-weight:500;font-size:clamp(34px,5.6vw,52px);line-height:0.96;margin-bottom:14px;text-transform:uppercase}
+.pres-l h3 .gold{color:var(--gold-3)}
+.pres-l p{color:var(--soft);font-size:clamp(14px,3.2vw,16px);line-height:1.7;margin-bottom:26px;max-width:42ch;font-weight:400}
+.pres-l .btn{width:100%;justify-content:center}
+.pres-r{padding:clamp(28px,4.5vw,42px);background:var(--ink-2)}
+.pres-r .rt{font-family:var(--sans);text-transform:uppercase;letter-spacing:0.14em;font-size:12px;font-weight:500;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.pres-r .rt::after{content:"";flex:1;height:1px;background:var(--line)}
+.pres-r ul{list-style:none}
+.pres-r li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;font-size:clamp(14px,3.2vw,15.5px);color:var(--soft);line-height:1.55;border-bottom:1px solid var(--line);font-weight:400}
+.pres-r li:last-child{border-bottom:none}
+.pres-r li .ck{width:19px;height:19px;flex-shrink:0;color:var(--gold-2);margin-top:2px}
+.pres-r li .ck svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8}
+.plans-foot{text-align:center;margin-top:32px;font-family:var(--sans);font-style:italic;font-weight:300;font-size:clamp(16px,3.5vw,20px);color:#48423a;max-width:60ch;margin-left:auto;margin-right:auto;line-height:1.6}
+.plans-foot b{color:var(--gold);font-style:normal;font-weight:500}
+
+.why{background:var(--ink);padding:clamp(58px,9vw,96px) 0;border-top:1px solid var(--line)}
+.why-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.why-head h2{font-family:var(--display);font-weight:500;font-size:clamp(38px,7vw,64px);line-height:0.94;margin-top:14px;text-transform:uppercase}
+.why-head h2 .gold{color:var(--gold-3)}
+.why-head .aside{font-family:var(--sans);font-style:italic;font-weight:300;color:var(--soft);font-size:clamp(15px,3.4vw,18px);max-width:38ch;line-height:1.6}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:820px){.wgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wgrid{grid-template-columns:1fr}}
+.wcell{background:var(--ink);padding:clamp(24px,4vw,30px) clamp(20px,3vw,26px)}
+.wcell h3{font-family:var(--display);font-weight:500;letter-spacing:0.01em;font-size:clamp(20px,4vw,26px);color:var(--gold-3);margin-bottom:7px;text-transform:uppercase}
+.wcell p{color:var(--soft);font-size:clamp(13.5px,3.1vw,15px);line-height:1.65;font-weight:400}
+
+.lead{background:linear-gradient(180deg,var(--ink) 0%, #100d08 100%);padding:clamp(64px,10vw,110px) 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.lead::before{content:"";position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:70%;background:radial-gradient(ellipse at center, rgba(184,134,59,0.13), transparent 60%);pointer-events:none}
+.lead-in{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,66px);align-items:center;max-width:1060px;margin:0 auto}
+@media(max-width:860px){.lead-in{grid-template-columns:1fr;gap:30px}}
+.lead-copy h2{font-family:var(--display);font-weight:500;font-size:clamp(42px,8vw,74px);line-height:0.92;margin:16px 0 16px;text-transform:uppercase}
+.lead-copy h2 .gold{color:var(--gold-3)}
+.lead-copy p{color:var(--soft);font-size:clamp(15px,3.3vw,17px);line-height:1.75;max-width:46ch;margin-bottom:22px;font-weight:400}
+.lead-copy .assure{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.lead-copy .assure div{display:flex;gap:12px;align-items:center;font-family:var(--sans);font-size:14px;font-weight:400;color:var(--soft)}
+.lead-copy .assure .d{width:20px;height:20px;color:var(--gold-2);flex-shrink:0}
+.lead-copy .assure .d svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8}
+.lead-card{background:var(--ink-2);border:1px solid rgba(184,134,59,0.32);border-radius:4px;padding:clamp(26px,4.5vw,38px);box-shadow:0 30px 70px rgba(0,0,0,0.5)}
+.lead-card .ftop{font-family:var(--sans);text-transform:uppercase;letter-spacing:0.14em;font-size:12px;font-weight:500;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.lead-card .ftop::after{content:"";flex:1;height:1px;background:var(--line)}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-family:var(--sans);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;font-size:11px;color:var(--muted);margin-bottom:8px}
+.fld input,.fld select{width:100%;background:var(--ink);border:1px solid rgba(255,255,255,0.14);border-radius:2px;padding:15px 16px;color:#fff;font-size:15px;font-family:inherit;transition:border-color .2s,box-shadow .2s;min-height:52px;font-weight:400}
+.fld select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D8AE5C' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.fld select option{background:#131315;color:#fff}
+.fld input::placeholder{color:rgba(255,255,255,0.35)}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--gold-2);box-shadow:0 0 0 3px rgba(184,134,59,0.16)}
+.fsubmit{width:100%;justify-content:center;margin-top:6px}
+.fnote{font-size:11px;color:var(--muted);text-align:center;margin-top:14px;font-family:var(--sans);letter-spacing:0.05em;text-transform:uppercase;font-weight:400}
+.ferr{display:none;color:#E39A82;font-size:13px;text-align:center;margin-top:12px}
+.ferr.show{display:block}
+.loading{opacity:.65;pointer-events:none}
+.fsuccess{display:none;text-align:center}
+.fsuccess.show{display:block;animation:fu .4s ease}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.fsuccess .ck{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;border:1px solid var(--gold-2);color:var(--gold-2);display:grid;place-items:center}
+.fsuccess .ck svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.8}
+.fsuccess h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,6vw,40px);margin-bottom:10px;text-transform:uppercase}
+.fsuccess p{color:var(--soft);font-size:15px;line-height:1.65;margin-bottom:24px;max-width:32ch;margin-left:auto;margin-right:auto;font-weight:400}
+.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:#1FA855;color:#fff;font-family:var(--sans);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;font-size:14px;padding:15px 26px;border-radius:2px;transition:transform .15s,background .2s;min-height:52px}
+.btn-wa:hover{transform:translateY(-2px);background:#178c46}
+.btn-wa svg{width:20px;height:20px;fill:currentColor}
+
+.final{background:var(--ink);padding:clamp(66px,10vw,110px) 0;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.final-in{position:relative;z-index:2;max-width:820px;margin:0 auto}
+.final h2{font-family:var(--display);font-weight:500;font-size:clamp(48px,9vw,96px);line-height:0.9;margin-bottom:18px;text-transform:uppercase}
+.final h2 .gold{color:var(--gold-3)}
+.final p{color:var(--soft);font-size:clamp(15px,3.3vw,18px);line-height:1.75;max-width:56ch;margin:0 auto 30px;font-weight:400}
+
+footer{background:var(--ink);color:var(--muted);padding:clamp(50px,7vw,74px) 0 30px;border-top:1px solid var(--line)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:clamp(28px,4vw,44px);padding-bottom:36px;border-bottom:1px solid var(--line)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+.foot-brand img{height:66px;width:auto;margin-bottom:18px}
+.foot-brand p{font-size:13.5px;color:var(--muted);line-height:1.7;max-width:34ch;margin-bottom:18px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:38px;height:38px;border-radius:50%;background:var(--ink-3);display:grid;place-items:center;color:#fff;transition:background .2s,color .2s}
+.foot-social a:hover{background:var(--gold);color:var(--ink)}
+.foot-social svg{width:17px;height:17px;fill:currentColor}
+.foot-col h4{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:0.05em;font-size:22px;color:#fff;margin-bottom:16px}
+.foot-col .row{margin-bottom:13px}
+.foot-col .lbl{font-family:var(--sans);font-weight:500;color:#fff;font-size:13.5px;margin-bottom:2px}
+.foot-col .val{font-size:13.5px;color:var(--muted);line-height:1.6}
+.foot-col .val a{color:var(--muted);transition:color .2s}
+.foot-col .val a:hover{color:var(--gold-3)}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:11px}
+.foot-col li a{font-size:13.5px;color:var(--muted);transition:color .2s;display:inline-flex;align-items:center;gap:9px}
+.foot-col li a::before{content:"";width:5px;height:5px;border-top:1px solid var(--gold-2);border-right:1px solid var(--gold-2);transform:rotate(45deg);display:inline-block}
+.foot-col li a:hover{color:var(--gold-3)}
+.copyright{font-size:11px;color:#5c574f;line-height:1.7;text-align:center;font-weight:400;margin-top:24px}
+
+.fab{position:fixed;bottom:20px;right:20px;z-index:200;background:#1FA855;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 30px rgba(31,168,85,0.45);transition:transform .2s}
+.fab:hover{transform:translateY(-3px) scale(1.04)}
+.fab svg{width:28px;height:28px;fill:currentColor}
+
+/* Performance: renderiza secoes abaixo da dobra so quando chegam perto da viewport */
+.problem,.outcome,.droneband,.benefits,.gallery,.why,.final,footer{content-visibility:auto;contain-intrinsic-size:auto 760px}
+
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="ticker">Invictus Centro de Performance &nbsp;·&nbsp; <b>Método Maximus Presencial</b> &nbsp;·&nbsp; Vagas limitadas</div>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand"><img src="https://invictusmafra.com.br/wp-content/uploads/2025/04/LOGO-1.png" alt="Invictus" /></a>
+    <a href="#entrar" class="nav-cta">Garantir vaga</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-in">
+    <div class="hero-lead">
+      <span class="kicker"><span class="idx">01</span><span class="bar"></span> Método Maximus Presencial</span>
+      <h1>Cansou de começar <span class="l2">e desistir?</span>
+        <span class="soft-i">O problema nunca foi a sua vontade. Foi o plano.</span>
+      </h1>
+      <p class="sub">O <b>Método Maximus</b> une treino e alimentação com a sua vida real. Agora presencial, dentro da Invictus.</p>
+      <div class="hero-actions">
+        <a href="#entrar" class="btn btn-solid">Quero garantir minha vaga
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#metodo" class="btn btn-ghost">Como funciona</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-stat"><div class="n">1</div><div class="t">Plano pra sua rotina</div></div>
+      <div class="hero-stat"><div class="n">4</div><div class="t">Frentes num só plano</div></div>
+      <div class="hero-stat"><div class="n">0</div><div class="t">Fórmula genérica</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="manifesto">
+  <div class="wrap">
+    <span class="kicker"><span class="idx">02</span><span class="bar"></span> Manifesto</span>
+    <div class="manifesto-grid">
+      <blockquote>Não é falta de vontade. <span class="hi">É falta</span> <span class="em">de método.</span></blockquote>
+      <div class="body">
+        <p>Cuidar do corpo tem que caber na sua vida, não competir com ela. Por isso o Maximus começa pelo seu contexto, antes de montar qualquer plano.</p>
+        <p><b>Treino e alimentação pensados pra pessoa que você é hoje</b>, e ajustados conforme você evolui. Constância possível, decisão por dados, resultado que se mantém.</p>
+        <div class="sig">Invictus Centro de Performance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="wrap">
+    <span class="kicker"><span class="idx">03</span><span class="bar"></span> Por que tanta gente desiste</span>
+    <h2>Você já parou pra pensar por que <span class="gold">desiste?</span></h2>
+    <div class="prob-rows">
+      <div class="prob-row">
+        <div class="no">A</div>
+        <div class="tx"><h3>A vida real pesa demais</h3><p>Nenhum plano genérico foi pensado pra sua rotina de trabalho, estudo, filhos e casa.</p></div>
+      </div>
+      <div class="prob-row">
+        <div class="no">B</div>
+        <div class="tx"><h3>Dieta e treino soltos não bastam</h3><p>Falta o que amarra tudo: uma estratégia pensada pra você.</p></div>
+      </div>
+      <div class="prob-row">
+        <div class="no">C</div>
+        <div class="tx"><h3>Esforço que não aparece no espelho</h3><p>Treinar e não ver mudança é o que faz a maioria largar. Aqui isso não acontece.</p></div>
+      </div>
+    </div>
+    <p class="prob-note">No Maximus, treino, dieta, acompanhamento e tecnologia trabalham <b>juntos, no mesmo plano.</b></p>
+  </div>
+</section>
+
+<section class="method" id="metodo">
+  <div class="wrap">
+    <div class="method-head">
+      <span class="kicker"><span class="idx">04</span><span class="bar"></span> Dentro do Maximus</span>
+      <h2>Tudo junto, <span class="gold">no mesmo plano.</span></h2>
+    </div>
+    <div class="mgrid">
+      <div class="mcell">
+        <span class="no">01</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M6 20h28M10 14v12M6 16v8M30 14v12M34 16v8" stroke-linecap="round"/></svg></div>
+        <h3>Treino individualizado</h3>
+        <p>Programação desenhada pro seu perfil e objetivo.</p>
+      </div>
+      <div class="mcell">
+        <span class="no">02</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M20 6c8 0 12 5 12 12 0 9-6 16-12 16S8 27 8 18C8 11 12 6 20 6Z"/><path d="M20 6v28M20 16c-4 0-7-2-8-5M20 16c4 0 7-2 8-5" stroke-linecap="round"/></svg></div>
+        <h3>Nutrição estratégica</h3>
+        <p>Plano alimentar alinhado ao treino, a favor do seu objetivo.</p>
+      </div>
+      <div class="mcell">
+        <span class="no">03</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M8 10h24v16H18l-8 6v-6H8z" stroke-linejoin="round"/><path d="M15 18h10M15 14h6" stroke-linecap="round"/></svg></div>
+        <h3>Acompanhamento contínuo</h3>
+        <p>O plano evolui junto com você, do começo ao fim.</p>
+      </div>
+      <div class="mcell">
+        <span class="no">04</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><rect x="13" y="5" width="14" height="30" rx="3"/><path d="M18 9h4M20 30h.01" stroke-linecap="round"/></svg></div>
+        <h3>App Prime Coach</h3>
+        <p>Sua evolução monitorada em tempo real, na palma da mão.</p>
+      </div>
+      <div class="mcell">
+        <span class="no">05</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><circle cx="14" cy="13" r="5"/><circle cx="27" cy="15" r="4"/><path d="M6 33c0-5 4-9 8-9s8 4 8 9M23 33c0-4 2-7 5-7s5 2 5 6" stroke-linecap="round"/></svg></div>
+        <h3>Equipe multidisciplinar</h3>
+        <p>Coach, nutricionista e médico atuando de forma integrada.</p>
+      </div>
+      <div class="mcell">
+        <span class="no">06</span>
+        <div class="ic"><svg viewBox="0 0 40 40"><path d="M6 32V8M6 32h28M12 26l6-8 5 5 8-11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Avaliação por dados</h3>
+        <p>Calorimetria e bioimpedância guiam cada decisão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="outcome">
+  <div class="wrap outcome-in">
+    <div class="outcome-copy">
+      <span class="kicker"><span class="idx">05</span><span class="bar"></span> O que muda pra você</span>
+      <h2>Resultado que você <span class="gold">sustenta.</span></h2>
+      <p class="lead">Não é um choque de trinta dias. É estrutura pra transformar de verdade e manter.</p>
+    </div>
+    <ul class="olist">
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="tt">Clareza total no que fazer</div><div class="td">Você chega sabendo exatamente o que treinar e por quê.</div></div></li>
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="tt">Progresso que não estaciona</div><div class="td">Quando o corpo se adapta, o plano muda. Sem platô.</div></div></li>
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="tt">Resultado que aparece no espelho</div><div class="td">Cada ajuste é pensado pra você ver a mudança.</div></div></li>
+      <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="tt">Suporte pra não desistir</div><div class="td">Nos dias difíceis, uma equipe ajusta a rota com você.</div></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="droneband" id="estrutura">
+  <div class="wrap">
+    <span class="kicker"><span class="idx">06</span><span class="bar"></span> A casa da sua evolução</span>
+    <h2>Feita pra <span class="gold">resultado.</span></h2>
+  </div>
+</section>
+
+<section class="benefits" id="profissionais">
+  <div class="wrap">
+    <div class="benefits-head">
+      <span class="kicker"><span class="idx">07</span><span class="bar"></span> Quem cuida de você</span>
+      <h2>Os profissionais por trás do <span class="gold">seu plano.</span></h2>
+      <p>Uma equipe multidisciplinar trabalhando junto, cada especialista no seu papel, pelo seu resultado.</p>
+    </div>
+
+    <!-- Fotos dos profissionais (versoes hospedadas no site da Invictus). Troque o src pela foto exata quando quiser. -->
+    <div class="brow">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/coach-fit.png" alt="Coach Fitness da Invictus" loading="lazy" />
+        <span class="tag">Coach Fitness</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">01</div>
+        <h3>Coach <span class="gold">Fitness</span></h3>
+        <p>Acreditamos que resultados de verdade são construídos com estratégia, conhecimento e constância.</p>
+      </div>
+    </div>
+
+    <div class="brow rev">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/nutricionista.png" alt="Nutricionista da Invictus" loading="lazy" />
+        <span class="tag">Nutricionista</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">02</div>
+        <h3><span class="gold">Nutricionista</span></h3>
+        <p>A nutrição não é um complemento, mas um dos pilares essenciais do nosso centro de performance esportiva, saúde e estética.</p>
+      </div>
+    </div>
+
+    <div class="brow">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/fisioterapeuta.png" alt="Fisioterapeuta da Invictus" loading="lazy" />
+        <span class="tag">Fisioterapeuta</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">03</div>
+        <h3><span class="gold">Fisioterapeuta</span></h3>
+        <p>O fisioterapeuta é um profissional essencial, atuando como um verdadeiro guardião do seu movimento e bem-estar.</p>
+      </div>
+    </div>
+
+    <div class="brow rev">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/medica.png" alt="Médica da Invictus" loading="lazy" />
+        <span class="tag">Médica</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">04</div>
+        <h3><span class="gold">Médica</span></h3>
+        <p>Guardiã da sua saúde, com uma abordagem proativa e preventiva para otimizar seu bem-estar de dentro para fora, com total segurança.</p>
+      </div>
+    </div>
+
+    <div class="brow">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/psicologa.png" alt="Psicóloga da Invictus" loading="lazy" />
+        <span class="tag">Psicóloga</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">05</div>
+        <h3><span class="gold">Psicóloga</span></h3>
+        <p>Saúde de verdade começa pela mente. Cuidar dela é parte essencial da nossa missão de bem-estar completo e transformador.</p>
+      </div>
+    </div>
+
+    <div class="brow rev">
+      <div class="bimg">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/09/dentista.png" alt="Dentista da Invictus" loading="lazy" />
+        <span class="tag">Dentista</span>
+      </div>
+      <div class="btext">
+        <div class="bnum">06</div>
+        <h3><span class="gold">Dentista</span></h3>
+        <p>A saúde bucal é um pilar do seu bem-estar, unindo a expertise da clínica geral com a precisão da estética.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plans" id="planos">
+  <div class="wrap">
+    <span class="kicker"><span class="idx">08</span><span class="bar"></span> O programa presencial</span>
+    <div class="plans-head">
+      <h2>Agora no formato <span class="gold">presencial.</span></h2>
+      <p>O Método Maximus chegou na sede da Invictus. Treino, dieta, acompanhamento e tecnologia no mesmo lugar, com a nossa equipe acompanhando cada passo.</p>
+    </div>
+
+    <div class="pres">
+      <div class="pres-l">
+        <span class="flag">Formato presencial</span>
+        <h3>Do seu lado, <span class="gold">todos os dias.</span></h3>
+        <p>Você treina na nossa estrutura, com a equipe de perto. Na conversa, a gente monta o plano certo pra você.</p>
+        <a href="#entrar" class="btn btn-solid" data-plano="Método Maximus Presencial">Garantir minha vaga
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="pres-r">
+        <div class="rt">O que você tem acesso</div>
+        <ul>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Academia Invictus e aulas com personal</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fitness coach acompanhando sua evolução</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Nutricionista cuidando da sua alimentação</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Calorimetria e bioimpedância</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>App Prime Coach entre os encontros</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ajustes ilimitados de treino e dieta</li>
+        </ul>
+      </div>
+    </div>
+    <p class="plans-foot">Fale com o nosso time e descubra o <b>plano ideal pra sua rotina e o seu objetivo.</b></p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="why-head">
+      <div>
+        <span class="kicker"><span class="idx">09</span><span class="bar"></span> Por que Invictus</span>
+        <h2>O que faz a <span class="gold">diferença.</span></h2>
+      </div>
+      <p class="aside">Estrutura, tecnologia e gente de verdade.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wcell"><h3>Equipe integrada</h3><p>Médicos, nutricionistas e coaches juntos pelo seu resultado.</p></div>
+      <div class="wcell"><h3>Tecnologia de ponta</h3><p>App Prime Coach com monitoramento em tempo real.</p></div>
+      <div class="wcell"><h3>Estrutura completa</h3><p>Academia, salas de consulta e equipamentos de alto padrão.</p></div>
+      <div class="wcell"><h3>Atendimento humano</h3><p>Cada aluno tratado de forma individual, sem fórmula pronta.</p></div>
+      <div class="wcell"><h3>Estratégia sob medida</h3><p>Plano feito a partir do seu histórico e objetivos.</p></div>
+      <div class="wcell"><h3>Decisão por dados</h3><p>O que o seu corpo precisa em cada fase.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lead" id="entrar">
+  <div class="wrap lead-in">
+    <div class="lead-copy">
+      <span class="kicker"><span class="idx">10</span><span class="bar"></span> Garanta sua vaga</span>
+      <h2>Garanta a sua vaga <span class="gold">agora.</span></h2>
+      <p>Deixa seu contato e conta seu objetivo. O nosso time fala com você e monta o Método Maximus Presencial ideal pra você.</p>
+      <div class="assure">
+        <div><span class="d"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Atendimento direto com o nosso time</div>
+        <div><span class="d"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Sem compromisso, sem enrolação</div>
+        <div><span class="d"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Resposta rápida pelo WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="lead-card">
+      <div id="formBox">
+        <div class="ftop">Garanta sua vaga</div>
+        <form id="leadForm" novalidate>
+          <div class="fld">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como te chamamos?" required autocomplete="name" />
+          </div>
+          <div class="fld">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required autocomplete="tel" inputmode="tel" />
+          </div>
+          <div class="fld">
+            <label for="objetivo">Seu objetivo</label>
+            <select id="objetivo" name="objetivo" required>
+              <option value="" disabled selected>Escolha seu objetivo</option>
+              <option value="Emagrecimento">Emagrecer</option>
+              <option value="Ganho de massa">Ganhar massa muscular</option>
+              <option value="Definição">Definição</option>
+              <option value="Saúde e performance">Saúde e performance</option>
+              <option value="Voltar a treinar">Voltar a treinar do zero</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <input type="hidden" id="planoInteresse" name="plano" value="Método Maximus Presencial" />
+          <button type="submit" class="btn btn-solid fsubmit" id="leadBtn">Quero garantir minha vaga
+            <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="ferr" id="formError">Algo deu errado. Tente de novo ou fale direto no WhatsApp.</div>
+          <p class="fnote">Seus dados ficam só com a equipe Invictus</p>
+        </form>
+      </div>
+
+      <div class="fsuccess" id="formSuccess">
+        <div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Vaga solicitada!</h3>
+        <p>Em breve o nosso time entra em contato. Quer adiantar? Fala com a gente agora.</p>
+        <a href="#" class="btn-wa" id="waSuccessBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.66-.77-3.08-1.21-5.06-4.34-5.22-4.54-.15-.2-1.26-1.67-1.26-3.19 0-1.52.8-2.27 1.08-2.58.28-.31.61-.38.81-.38.2 0 .41 0 .58.01.19.01.44-.07.68.52.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.18.3.79 1.3 1.69 2.11 1.17 1.04 2.15 1.36 2.46 1.51.31.15.49.13.67-.08.18-.2.77-.9.98-1.21.2-.31.41-.25.68-.15.28.1 1.75.83 2.05.98.31.15.51.22.58.35.07.12.07.72-.17 1.4z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap final-in">
+    <h2>Sua vaga está <span class="gold">aberta.</span></h2>
+    <p>Treino, dieta, acompanhamento e tecnologia, com gente cuidando de perto. Entra em contato e garante a sua vaga.</p>
+    <a href="#entrar" class="btn btn-solid" style="margin:0 auto">Garantir minha vaga
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="https://invictusmafra.com.br/wp-content/uploads/2025/04/LOGO-1.png" alt="Invictus" />
+        <p>Siga a Invictus nas redes sociais e fique por dentro de todas as novidades.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/invictus.mafra" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.8 3.7-3.8 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          </a>
+          <a href="https://instagram.com/invictus.mafra" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 8.5 2.6 8.9 2.6 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Horários</h4>
+        <div class="row"><div class="lbl">Segunda a Sexta</div><div class="val">05:30 às 23:00</div></div>
+        <div class="row"><div class="lbl">Sábado</div><div class="val">08:00 às 12:00<br/>14:00 às 18:00</div></div>
+        <div class="row"><div class="lbl">Domingo</div><div class="val">09:00 às 12:00</div></div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Conheça</h4>
+        <ul>
+          <li><a href="https://invictusmafra.com.br/#sobre" target="_blank" rel="noopener">Sobre Nós</a></li>
+          <li><a href="https://invictusmafra.com.br/#servicos" target="_blank" rel="noopener">Serviços</a></li>
+          <li><a href="https://invictusmafra.com.br/fitflix/" target="_blank" rel="noopener">FitFlix</a></li>
+          <li><a href="#profissionais">Profissionais</a></li>
+          <li><a href="#entrar">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contatos</h4>
+        <div class="row"><div class="lbl">Endereço</div><div class="val">Rua Tenente Ary Rauen, 1454, Restinga, Mafra/SC, 89302-100</div></div>
+        <div class="row"><div class="lbl">Email</div><div class="val"><a href="mailto:contato@invictusmafra.com.br">contato@invictusmafra.com.br</a></div></div>
+        <div class="row"><div class="lbl">Fone</div><div class="val"><a href="https://wa.me/5547933840695" target="_blank" rel="noopener">(47) 93384-0695</a></div></div>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Invictus Centro de Performance · Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="#" class="fab" id="waFab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.66-.77-3.08-1.21-5.06-4.34-5.22-4.54-.15-.2-1.26-1.67-1.26-3.19 0-1.52.8-2.27 1.08-2.58.28-.31.61-.38.81-.38.2 0 .41 0 .58.01.19.01.44-.07.68.52.24.6.83 2.06.9 2.21.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.18.3.79 1.3 1.69 2.11 1.17 1.04 2.15 1.36 2.46 1.51.31.15.49.13.67-.08.18-.2.77-.9.98-1.21.2-.31.41-.25.68-.15.28.1 1.75.83 2.05.98.31.15.51.22.58.35.07.12.07.72-.17 1.4z"/></svg>
+</a>
+
+<script>
+/* ============================================================
+   CONFIGURACAO: edite as 2 linhas abaixo
+   ============================================================ */
+const WHATSAPP_NUMERO = "5547933840695";              // WhatsApp oficial da Invictus (edite se precisar)
+const SHEETS_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";  // veja GUIA-GOOGLE-SHEETS.md
+/* ============================================================ */
+
+function waLink(msg){ return "https://wa.me/" + WHATSAPP_NUMERO + "?text=" + encodeURIComponent(msg); }
+
+document.getElementById('waFab').href = waLink("Ola! Vim pela pagina do Metodo Maximus Presencial e quero garantir minha vaga.");
+
+document.querySelectorAll('[data-plano]').forEach(function(el){
+  el.addEventListener('click', function(){
+    document.getElementById('planoInteresse').value = el.getAttribute('data-plano');
+  });
+});
+
+var waInput = document.getElementById('whatsapp');
+waInput.addEventListener('input', function(){
+  var v = this.value.replace(/\D/g,'').slice(0,11);
+  if(v.length > 6){ this.value = "(" + v.slice(0,2) + ") " + v.slice(2,7) + "-" + v.slice(7); }
+  else if(v.length > 2){ this.value = "(" + v.slice(0,2) + ") " + v.slice(2); }
+  else { this.value = v; }
+});
+
+var form = document.getElementById('leadForm');
+var btn = document.getElementById('leadBtn');
+var errBox = document.getElementById('formError');
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  errBox.classList.remove('show');
+
+  var nome = document.getElementById('nome').value.trim();
+  var whatsapp = document.getElementById('whatsapp').value.trim();
+  var objetivo = document.getElementById('objetivo').value;
+  var plano = document.getElementById('planoInteresse').value || "Metodo Maximus Presencial";
+
+  if(!nome || !whatsapp || !objetivo){
+    errBox.textContent = "Preencha nome, WhatsApp e objetivo.";
+    errBox.classList.add('show');
+    return;
+  }
+
+  var original = btn.innerHTML;
+  btn.classList.add('loading');
+  btn.textContent = "Enviando...";
+
+  var dados = {
+    nome: nome, whatsapp: whatsapp, objetivo: objetivo, plano: plano,
+    origem: "Meta Ads - Landing Maximus Presencial", data: new Date().toLocaleString('pt-BR')
+  };
+
+  if(typeof fbq === 'function'){ fbq('track','Lead'); }
+
+  try {
+    if(SHEETS_URL && SHEETS_URL.indexOf('COLE_AQUI') === -1){
+      await fetch(SHEETS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(dados)
+      });
+    }
+    sucesso(nome, objetivo);
+  } catch(err){
+    sucesso(nome, objetivo);
+  } finally {
+    btn.classList.remove('loading');
+    btn.innerHTML = original;
+  }
+});
+
+function sucesso(nome, objetivo){
+  var msg = "Ola! Meu nome e " + nome + ". Meu objetivo e " + objetivo + ". Vim pela pagina do Metodo Maximus Presencial e quero garantir minha vaga!";
+  document.getElementById('waSuccessBtn').href = waLink(msg);
+  document.getElementById('formBox').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+  document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+</body>
+</html>
